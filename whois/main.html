@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="author" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>후이즈드림</title>
+<link rel="shortcut icon" href="" type="image/x-icon" />
+
+
+
+
+
+
+
+<!-- user common css -->
+    
+<style type="text/css">
+/* 사이트 기본 폰트 : 나눔고딕. 2014-07-15 */
+@font-face {
+    font-family:'NanumGothic';
+    src: url('/tpl/webfont/NanumGothic.eot');
+    src: url('/tpl/webfont/NanumGothic.eot?#iefix') format('embedded-opentype'),
+         url('/tpl/webfont/NanumGothic.woff') format('woff'),
+         url('/tpl/webfont/NanumGothic.ttf') format('truetype');
+   
+}
+
+
+body, td, th, div, span, input, select, textarea { font-family: 'NanumGothic'; font-size: 12px;color:#7c7b7b; margin: 0px; line-height:16px; }
+img, th, td { border:0; }
+li, ul { list-style:none; margin:0; padding:0; }
+textarea { border:1px solid #d1d1d1; }
+input, select, label { vertical-align:middle; }
+a:link { color:#7c7b7b; text-decoration: none; line-height:16px; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; color:#0b96d4; }
+a:active { text-decoration: none; color:#0b96d4; }
+#warp { width:100%; background:url(/images/kor01-14-0146/common/menu_bg.gif) left top repeat-x; text-align:center; }
+#header { position:relative; margin:0 auto; width:980px; height:146px; text-align:left; }
+#login { position:absolute; top:15px; right:0px; width:200px; height:9px; text-align:right;  }
+#login ul { float:right; height:9px; }
+#login ul li { float:left; margin-left:15px; }
+#logo { position:absolute; top:25px; width:300px; height:45px; }
+#L_SITE_LOGO { position:absolute; left:0px; top:0px; width:177px; height:20px; }
+#L_SITE_LOGO td { height:0; vertical-align:top; }
+#navi_l { position:absolute; top:70px; width:980px; height:76px; }
+#con { width:100%; }
+#content { margin:0 auto; width:980px; text-align:left; }
+#footer { clear:both; width:100%; height:100px; background:#f4f4f4; }
+.clear { clear:both; }
+.bold_black { color:#000; font-weight:bold; }
+.site_navi { text-align:right; font:11px 'NanumGothic'; color:#838383; width:100%; border-bottom:1px solid #dddddd; padding-bottom:7px; }
+.contents { margin:0 auto; width:980px; }
+.gray_font_11 { font-size: 11px; color: #797979; }
+</style>
+
+<!-- DEFAULT HEAD AREA : 빌더 기본 정보입니다. 해당 내용 삭제 시 문제가 발생할 수 있습니다. -->
+
+			<link href='common.css' type='text/css' rel='stylesheet' />
+			<link href='jquery.theme.css' type='text/css' rel='stylesheet' />
+			<script type='text/javascript' src='sky.rama.js'></script>
+			<script type='text/javascript' src='jquery.custom.js'></script>
+			<script type='text/javascript' src='durian.common.js'></script>
+			<script type='text/javascript' src='jquery-ui.custom.min.js'></script>
+			<!-- /DEFAULT HEAD AREA -->
+
+<!-- user common css -->
+<link href="common.css" type="text/css" rel="stylesheet">
+<!-- /user common css -->
+
+<!-- js -->
+<script type="text/javascript">
+	var SITE_ID = 'kor01-14-0146';
+	var IMG_SERVER = '';
+</script>
+<!-- /js -->
+
+
+</head>
+<body style="background-color:#FFFFFF; ">
+
+<div id="warp">
+	<!--[[AREA_TOP_START]]-->
+	<div id="header">
+		<div id="login"><ul>
+	<li><a href="/"><img src="/images/kor01-14-0146/common/btn_home.gif" alt="HOME" width="29" height="9" /></a></li>	
+		<li><a href="/?act=user.user_login"><img src="/images/kor01-14-0146/common/btn_login.gif" alt="LOGIN" width="30" height="9" /></a></li>
+	<li><a href="/?act=user.user_join_agree"><img src="/images/kor01-14-0146/common/btn_join.gif" alt="JOIN" width="23" height="9" /></a></li>
+		<li><a href="/?act=info.sitemap"><img src="/images/kor01-14-0146/common/btn_sitemap.gif" alt="SITEMAP" width="43" height="9" /></a></li>
+</ul>
+</div>
+		<div id="logo"><div id="L_SITE_LOGO">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<td align="center" height="70">
+							<a href="/?act=main"><img src="/data/file/logo.gif" border="0" ></a>
+					</td>
+	</tr>
+</table>
+</div></div>
+		<div id="navi_l"><style type="text/css">
+    #navi { position:relative; width:980px; height:76px; text-align:left;}
+	.navi_main { width:980px; height:47px; position:relative; top:0px; left:0;}
+	.navi_main li { float:left; }
+	.navi_sub_1 { display:block; position:absolute; top:55px; left:70px; height:14px; }
+	.navi_sub_2 { display:block; position:absolute; top:55px; left:276px; height:14px; }
+	.navi_sub_3 { display:block; position:absolute; top:55px; left:465px; height:14px; }
+	.navi_sub_4 { display:block; position:absolute; top:55px; left:670px; height:14px; }
+	.navi_sub_5 { display:block; position:absolute; top:55px; right:30px; height:14px; }
+	.navi_sub_menu li { float:left; margin-right:10px; }
+</style>
+<script type="text/javascript">
+
+var _varCurrentAct = '//';
+
+jQuery(document).ready(function(){
+	jQuery('#navi .navi_main .navi_main_obj').each(function(){	
+		if(!jQuery(this).attr('orgsrc')) {
+			jQuery(this).attr('orgsrc', jQuery(this).attr('src'));
+		}
+
+		jQuery(this).hover(function(){
+			_fcNaviControl(jQuery(this).attr('subcode'));
+		});
+	});
+
+	var curSubCode = _fcNaviControlMap[_varCurrentAct];
+
+	if( curSubCode ) {
+		_fcNaviControl(curSubCode);
+	}
+});
+
+/**************************************************
+*
+* # 상단메뉴 매칭 정보(URL 매개변수 사용)
+*
+* 구성: 'act / pcode / bbs_code':'subcode 번호'
+*
+**************************************************/
+var _fcNaviControlMap = {
+	'info.page/greeting/'	                                    : '1',
+	'info.page/history/'	                                    : '1',
+	'info.page/map/'	                                    : '1',
+	'info.page/company_info/'	                                        : '2',
+	'info.page/products/'                                        : '3',
+	'gallery.page/portfolio/'                                        : '3',
+	'info.page/recruit/'                                        : '4',
+	'board//notice'		                                        : '5',
+	'board//freeboard'		                                        : '5'
+};
+
+var _fcNaviControl = function(selCode) {
+
+	if(!selCode) return;
+
+	jQuery('#navi .navi_main .navi_main_obj').each(function(){
+		jQuery('#navi .navi_sub_'+jQuery(this).attr('subcode')).hide();
+		jQuery(this).attr('src', jQuery(this).attr('orgsrc'));
+		
+	});
+	
+	jQuery('#navi .navi_main .navi_main_obj[subcode='+selCode+']').attr('src', jQuery('#navi .navi_main .navi_main_obj[subcode='+selCode+']').attr('oversrc'));
+	jQuery('#navi .navi_sub_'+selCode).show();
+
+};
+</script>
+
+<div id="navi">
+	<ul class="navi_main">
+		<li><a href="/?act=info.page&pcode=greeting"><img src="/images/kor01-14-0146/common/menu_01.gif" alt="회사소개" class='navi_main_obj' subcode='1' oversrc='/images/kor01-14-0146/common/menu_ov_01.gif' /></a></li>
+		<li><a href="/?act=info.page&pcode=company_info"><img src="/images/kor01-14-0146/common/menu_02.gif" alt="사업소개" class='navi_main_obj' subcode='2' oversrc='/images/kor01-14-0146/common/menu_ov_02.gif' /></a></li>
+		<li><a href="/?act=shop.goods_list&GC=GD00"><img src="/images/kor01-14-0146/common/menu_03.gif" alt="제품소개" class='navi_main_obj' subcode='3' oversrc='/images/kor01-14-0146/common/menu_ov_03.gif' /></a></li>
+		<li><a href="/?act=info.page&pcode=recruit"><img src="/images/kor01-14-0146/common/menu_04.gif" alt="채용정보" class='navi_main_obj' subcode='4' oversrc='/images/kor01-14-0146/common/menu_ov_04.gif' /></a></li>
+		<li><a href="/?act=board&bbs_code=notice"><img src="/images/kor01-14-0146/common/menu_05.gif" alt="고객센터" class='navi_main_obj' subcode='5' oversrc='/images/kor01-14-0146/common/menu_ov_05.gif' /></a></li>
+	</ul>
+
+	<div class="navi_sub_1" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=info.page&pcode=greeting"><img src="/images/kor01-14-0146/common/menu1_01.gif" alt="CEO인사말" oversrc='/images/kor01-14-0146/common/menu1_ov_01.gif' /></a></li>
+			<li><a href="/?act=info.page&pcode=history"><img src="/images/kor01-14-0146/common/menu1_02.gif" alt="연혁" oversrc='/images/kor01-14-0146/common/menu1_ov_02.gif' /></a></li> 
+			<li><a href="/?act=info.page&pcode=map"><img src="/images/kor01-14-0146/common/menu1_03.gif" alt="찾아오시는길" oversrc='/images/kor01-14-0146/common/menu1_ov_03.gif' /></a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_2" style='display:none;'>
+        <ul class="navi_sub_menu">
+			<li><a href="/?act=info.page&pcode=company_info"><img src="/images/kor01-14-0146/common/menu2_01.gif" alt="사업분야" oversrc='/images/kor01-14-0146/common/menu2_ov_01.gif' /></a></li>
+		</ul>
+    </div>
+
+	<div class="navi_sub_3" style='display:none;'>
+		<ul class="navi_sub_menu">
+            <li><a href="/?act=shop.goods_list&GC=GD00"><img src="/images/kor01-14-0146/common/menu3_01.gif" alt="제품소개" oversrc='/images/kor01-14-0146/common/menu3_ov_01.gif' /></a></li>
+			<li><a href="/?act=gallery.page&pcode=portfolio"><img src="/images/kor01-14-0146/common/menu3_02.gif" alt="포트폴리오" oversrc='/images/kor01-14-0146/common/menu3_ov_02.gif' /></a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_4" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=info.page&pcode=recruit"><img src="/images/kor01-14-0146/common/menu4_01.gif" alt="채용정보" oversrc='/images/kor01-14-0146/common/menu4_ov_01.gif' /></a></li>
+		</ul>
+	</div>
+
+	<div class="navi_sub_5" style='display:none;'>
+		<ul class="navi_sub_menu">
+			<li><a href="/?act=board&bbs_code=notice"><img src="/images/kor01-14-0146/common/menu5_01.gif" alt="공지사항" oversrc='/images/kor01-14-0146/common/menu5_ov_01.gif' /></a></li>
+			<li><a href="/?act=board&bbs_code=freeboard"><img src="/images/kor01-14-0146/common/menu5_02.gif" alt="문의게시판" oversrc='/images/kor01-14-0146/common/menu5_ov_02.gif' /></a></li>
+		</ul>
+	</div>
+</div>
+<!--//네비--></div>
+	</div>
+	<!--[[AREA_TOP_END]]-->
+
+	<!--[[AREA_BODY_START]]-->
+	<div id="con"><style type="text/css">
+#main { width:100%; height:527px; background:url(/images/kor01-14-0146/main/main_bg.jpg) center top no-repeat; }
+#main_visual { margin:0 auto; width:980px; height:487px; }
+#content { height:225px; }
+.notice { float:left; width:300px; height:120px; position:relative; }
+.business { float:left; margin-left:40px; width:300px; height:130px; background:url(/images/kor01-14-0146/main/icon_biz.gif) right bottom no-repeat; position:relative; }
+.products { float:right; width:300px; height:130px; background:url(/images/kor01-14-0146/main/icon_pro.gif) right bottom no-repeat; position:relative; }
+.main_cont dt { height:28px; border-bottom:1px solid #d2d2d2; font-size:18px; font-weight:bold; color:#000000; }
+.main_cont dd { margin:0px; padding:15px 0px 0px 0px; }
+.more { position:absolute; right:0px; top:10px; width:59px; height:16px; font-size:11px; text-align:right; }
+.more span { margin-top:0px; width:3px; height:5px; }
+.sitelink { { position:absolute; left:0px; bottom:0px; width:59px; height:16px; }
+</style>
+
+<div id="main">
+    <div id="main_visual"><!--메인-->
+<img src="/images/kor01-14-0146/main/main_img.jpg" alt="메인" />
+<!--//메인--></div>
+</div>
+
+<div id="content">
+	<!--공지사항-->
+	<div class="notice">
+		<dl class="main_cont">
+			<dt>공지사항</dt>
+			<dd><style type="text/css">
+.notice_list { margin:0px; padding:0px; }
+.notice_list li { background:url('/images/kor01-14-0146/main/i_noti.gif') left 7px no-repeat; padding-left:12px; font-size:11px;height:20px; line-height:20px; }
+.notice_list a { float:left; color:#343434; }
+.notice_list .date { float:right; width:80px; text-align:right; color:#767575; font-size:11px;}
+</style>
+
+<ul class="notice_list">
+		
+	<li>
+				<a href="?act=board&bbs_mode=view&bbs_code=notice&bbs_seq=5" title="무료제작 서비스 특징">무료제작 서비스 특징</a>
+		<span class="date">2014-09-01</span>
+			</li>
+		
+	<li>
+				<a href="?act=board&bbs_mode=view&bbs_code=notice&bbs_seq=4" title="서비스 추천 대상">서비스 추천 대상</a>
+		<span class="date">2014-09-01</span>
+			</li>
+		
+	<li>
+				<a href="?act=board&bbs_mode=view&bbs_code=notice&bbs_seq=3" title="홈페이지 새롭게 오픈했습니다~! ">홈페이지 새롭게 오픈했습니다~! </a>
+		<span class="date">2014-09-01</span>
+			</li>
+		
+	<li>
+				<a href="?act=board&bbs_mode=view&bbs_code=notice&bbs_seq=2" title="홈페이지가 새롭게 오픈하였습니다 ">홈페이지가 새롭게 오픈하였습니다 </a>
+		<span class="date">2014-09-01</span>
+			</li>
+				
+</ul></dd>
+		</dl>
+		<span class="more"><a href="/?act=board&bbs_code=notice">더보기 <span><img src="/images/kor01-14-0146/main/i_bullet.gif" alt=""></span></a></span>	
+	</div>
+	<!--//공지사항-->
+
+	<div class="business">
+		<dl class="main_cont">
+			<dt>사업소개</dt>
+			<dd>독보적인 기술인 풍부한<br>
+			경험 최고의 친환경 테크놀로지<br>
+			기술을 선도합니다.</dd>
+		</dl>
+		<span class="sitelink"><a href="/?act=info.page&pcode=company_info"><img src="/images/kor01-14-0146/main/bt_sitelink.gif" alt="바로가기" /></a></span>
+	</div>
+
+	<div class="products">
+		<dl class="main_cont">
+			<dt>제품소개</dt>
+			<dd>후이즈 홀딩스는 최고의<br>
+			글로벌기술을 경쟁력으로<br>
+			꿈을 현실로 만들어 가겠습니다.</dd>
+		</dl>
+		<span class="sitelink"><a href="/?act=info.page&pcode=products"><img src="/images/kor01-14-0146/main/bt_sitelink.gif" alt="바로가기" /></a></span>
+	</div>
+</div></div>
+	<!--[[AREA_BODY_END]]-->
+
+	<!--[[AREA_BOTTOM_START]]-->
+	<div id="footer"><style type="text/css">
+#footer_view { margin:0 auto; width:980px; text-align:left;}
+#footer_logo { float:left; margin-top:48px; width:200px; }
+#footer_info { float:right; width:730px; }
+.foot_menu { margin-top:22px; height:16px; }
+.foot_menu li { float:left; padding:0 10px; background:url(/images/kor01-14-0146/common/footmenu_line.gif) right 3px no-repeat; }
+.foot_menu a { color:#424242; }
+#footer_info .foot_menu .nobg { background:none; padding-right:0px; }
+.com_info { clear:both; margin:0px; padding:15px 0px 0px 10px; line-height:16px; }
+.foot_copy { margin:0px; padding:0 10px; line-height:16px; }
+
+</style>
+
+<div id="footer_view">
+	<div id="footer_logo"><img src="/images/kor01-14-0146/common/copy_logo.gif" alt="하단로고" /></div>
+	<div id="footer_info">
+		<ul class="foot_menu">
+			<li><a href="/?act=info.provision">이용약관</a></li>
+			<li><a href="/?act=info.privacy">개인정보취급방침</a></li>
+			<li class="nobg"><a href="/?act=info.no_email_collect">이메일무단수집거부</a></li>			
+		</ul>
+		<p class="com_info">
+             
+             
+             
+            (주) 후이즈빌더 | 
+            대표이사 홍길동 |
+            사업자등록번호 110-81-41272 |
+            전화 02-1234-5678 |
+            팩스 02-1234-5678</p>
+		<p class="foot_copy">Copyright ⓒ <span class="bold_black">(주) 후이즈빌더</span> All rights reserved.</p>
+	</div>
+	<div class="clear"></div>
+</div>
+</div>
+	<!--[[AREA_BOTTOM_END]]-->
+</div>
+
+</body>
+</html>
+<script type="text/javascript"> var isMain = true; </script><div style="display:none;"><!--
+---------------------------
+ START 2015-01-09 15:13:10
+ INIT            : 0.00384
+ EXEC            : 0.00298
+ LAYOUT          : 0.00119
+ END             : 0.00435
+---------------------------
+ TOTAL           : 0.01235
+---------------------------
+--></div>
