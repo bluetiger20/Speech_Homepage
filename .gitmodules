@@ -1,0 +1,8 @@
+[submodule "suin"]
+	path = suin
+	url = git@github.com:bluetiger20/Speech_Homepage.git
+	branch = suin
+[submodule "minsu"]
+	path = minsu
+	url = git@github.com:bluetiger20/Speech_Homepage.git
+	branch = minsu
