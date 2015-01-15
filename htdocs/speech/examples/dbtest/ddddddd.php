@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -113,7 +114,7 @@
     .carousel-caption .lead {
       margin: 0;
       line-height: 1.25;
-      color: #fff;
+      color: black;
       text-shadow: 0 1px 1px rgba(0,0,0,.4);
     }
     .carousel-caption .btn {
@@ -252,7 +253,9 @@
 
     }
     </style>
-
+<style>
+body{padding-top: 60px}
+</style>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
@@ -268,29 +271,68 @@
 
   <body>
 
+      <div>
+        <br/>
+     
+        <br/>
+
+      </div>
 
 
     <!-- NAVBAR
     ================================================== -->
-    <div class="navbar-wrapper">
+    <div class="navbar-wrapper  ">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-      <div class="container">
 
-        <div class="navbar navbar-inverse">
-          <div class="navbar-inner">
+ <!--      <div>
+        <br/>
+        <br/><br/><br/><br/><br/>
+      </div> -->
+
+      <div class="container ">
+
+        <div class="navbar ">
+          <div class="navbar-inner  " >
+            <!-- navbar-fixed-top  -->
+
             <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+              <span class="icon-bar"></span> 
             </button>
-            <a class="brand" href="#">Project name</a>
+            <a class="brand">
+              <img src="../assets/img/examples/sogang-mark-transparent.png" alt="#"></a>
+          <!--   
+          <a class="brand"> href="#">By bluetiger</a> -->
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><a href="#">
+          <?php
+
+$conn=mysql_connect("localhost","root","apmsetup");
+mysql_select_db("mydb",$conn);
+
+        $query="SELECT * FROM table1";
+      $result=mysql_query($query,$conn);
+        $row=mysql_fetch_array($result);
+        echo $row['title'];
+
+      ?>
+        <!--  Home -->
+                </a></li>
+                <li><a href="#about">MEMBERS</a></li>
+                
+                <li><a href="#contact">PUBLICATION</a></li>
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">QnA <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    </ul>
+                </li>
                 <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -316,43 +358,55 @@
 
     <!-- Carousel
     ================================================== -->
+    <div class="container">
+ <div class="row">
+   <div class="span8">
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-          <img src="../assets/img/examples/slide-01.jpg" alt="">
-          <div class="container">
+          <img src="../assets/img/examples/opto-01.jpg" alt="">
+<!--           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+              <p class="lead">수지짱
+              </p>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="item">
           <img src="../assets/img/examples/slide-02.jpg" alt="">
-          <div class="container">
+         <!--  <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Learn more</a>
+              <h1>아이고.</h1>
+              <p class="lead">.</p>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="item">
           <img src="../assets/img/examples/slide-03.jpg" alt="">
-          <div class="container">
+         <!--  <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+               <h1></h1> 
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div><!-- /.carousel -->
 
+      </div> <!-- /.span8 -->
+      <div class="span4">
+          <ul class="nav nav-list">   <br /><br />     
+          <li><img src="../assets/img/examples/opto-02.gif" alt=""></li>
+         <br />
+          <li><img src="../assets/img/examples/opto-03.gif" alt=""></li><br />
+          <li><img src="../assets/img/examples/opto-04.PNG" alt=""></li>
+
+
+        </ul>
+     </div> <!-- /.span4 -->
+     </div> <!-- /.row -->
+ </div> <!-- /.container -->
 
 
     <!-- Marketing messaging and featurettes
@@ -366,24 +420,27 @@
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
           <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+          <p>ddd</p>
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div><!-- /.span4 -->
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
           <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p>ddd</p>
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div><!-- /.span4 -->
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
           <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p>ddddd</p>
           <p><a class="btn" href="#">View details &raquo;</a></p>
         </div><!-- /.span4 -->
       </div><!-- /.row -->
 
 
+      <!-- START THE FEATURETTES -->
+
+      <!-- /END THE FEATURETTES -->
 
 
       <!-- FOOTER -->
