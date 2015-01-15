@@ -22,6 +22,9 @@
 
   "use strict"; // jshint ;_;
 
+$('.dropdown').hover(function(){ 
+  $('.dropdown-toggle', this).trigger('click'); 
+});
 
  /* DROPDOWN CLASS DEFINITION
   * ========================= */
